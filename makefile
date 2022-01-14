@@ -1,5 +1,6 @@
-SRC = src/AdjacencyList.java \
-	src/TopologicalSorting.java
+SRC = src/Graph.java \
+	src/TopologicalSorting.java \
+	src/Vertex.java
 CLASSES = $(SRC:.java=.class)
 
 build: $(CLASSES)
@@ -16,8 +17,9 @@ test: build
 	java src.TopologicalSorting < graph/graph-105.alists
 	java src.TopologicalSorting < graph/graph-106.alists
 	java src.TopologicalSorting < graph/graph-107.alists
+	java -jar graph/randomdag.jar 10 0.3 | java src.TopologicalSorting
 
 .PHONY: clean
 
 clean:
-	rm -fr src/$(CLASSES)
+	rm -fr $(CLASSES)
