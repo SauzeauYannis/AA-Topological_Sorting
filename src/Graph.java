@@ -2,6 +2,10 @@ package src;
 
 import java.util.Scanner;
 
+/**
+ * Graph class represented by a adjacencyList of vertex
+ * @author Yannis Sauzeau
+ */
 public class Graph {
 
     private Vertex[] vertices;
@@ -9,25 +13,25 @@ public class Graph {
     public Graph() {
         Scanner scanner = new Scanner(System.in);
 
-        int verticesN = scanner.nextInt();
+        int verticesNum = scanner.nextInt();
 
-        this.vertices = new Vertex[verticesN];
-        int[] buffer = new int[verticesN];
+        this.vertices = new Vertex[verticesNum];
+        int[] buffer = new int[verticesNum]; // This buffer is usefull to create the successors array
 
-        for (int i = 0; i < verticesN; i++) {
+        for (int i = 0; i < verticesNum; i++) {
             int vertex = scanner.nextInt();
-            int neighbourN = 0;
-            int neighbour = scanner.nextInt();
+            int successorNum = 0;
+            int successor = scanner.nextInt();
 
-            while (neighbour != 0) {
-                buffer[neighbourN] = neighbour;
-                neighbour = scanner.nextInt();
-                neighbourN++;
+            while (successor != 0) {
+                buffer[successorNum] = successor;
+                successor = scanner.nextInt();
+                successorNum++;
             }
 
-            int[] neighbours = new int[neighbourN];
-            System.arraycopy(buffer, 0, neighbours, 0, neighbourN);
-            this.vertices[vertex - 1] = new Vertex(vertex, neighbours);
+            int[] successors = new int[successorNum];
+            System.arraycopy(buffer, 0, successors, 0, successorNum); // Copy the content of buffer with the good size
+            this.vertices[vertex - 1] = new Vertex(vertex, successors);
         }
 
         scanner.close();

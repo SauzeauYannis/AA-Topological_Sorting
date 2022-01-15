@@ -1,5 +1,9 @@
 package src;
 
+/**
+ * Vertex class with the number of their successors
+ * @author Yannis Sauzeau
+ */
 public class Vertex {
 
     enum Color {
@@ -9,23 +13,23 @@ public class Vertex {
     };
     
     private int number;
-    private int[] neighbours;
+    private int[] successors;
     private int explorer;
-    private Color color;
+    private Color mark;
 
-    public Vertex(int number, int[] neighbours) {
+    public Vertex(int number, int[] successors) {
         this.number = number;
-        this.neighbours = neighbours;
+        this.successors = successors;
         this.explorer = 0;
-        this.color = Color.GREEN;
+        this.mark = Color.GREEN;
     }
 
     public int getNumber() { return this.number; }
-    public int[] getNeighbours() { return neighbours; }
+    public int[] getSuccessors() { return successors; }
     public int getExplorer() { return this.explorer; }
-    public Color getColor() { return this.color; }
+    public Color getMark() { return this.mark; }
 
     public void setExplorer(int explorer) { this.explorer = explorer; }
-    public void setColor(Color color) { this.color = color; }
+    public void setMark(Color color) { this.mark = color; }
 
 }
