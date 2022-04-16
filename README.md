@@ -51,7 +51,7 @@ Enfin pour tout tester, exécutez la commande `make testAll`.
 
 ### Résultat
 
-Nous avons obtenu la note de ?/20. (Résultat en mars)
+Nous avons obtenu la note de 12/20.
 
 <a name="en"/>
 
@@ -93,4 +93,4 @@ Finally, to test everything, run the command `make testAll`.
 
 ### Result
 
-We obtained a score of ?/20. (Result in March)
+We obtained a score of 12/20.
